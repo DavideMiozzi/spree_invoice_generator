@@ -8,10 +8,10 @@ class CreateInvoices < ActiveRecord::Migration
       
       t.timestamps
     end
-    add_index :spree_invoice, :invoice_number
+    add_index :spree_invoices, :invoice_number
   end
   
   def down
-    drop_table :spree_invoice
+    drop_table :spree_invoices
   end
 end
