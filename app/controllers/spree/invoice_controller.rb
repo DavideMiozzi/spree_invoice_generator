@@ -5,7 +5,7 @@ module Spree
       order_id = params[:order_id].to_i
       @order = Order.find_by_id(order_id)
       @address = @order.bill_address
-      @invoice_print = spree_current_user.has_spree_role?(:admin) ? Spree::Invoice.find_or_create_by_order_id({:order_id => order_id, :user_id => @order ? @order.user_id : nil}) : spree_current_user.invoices.find_or_create_by_order_id(order_id)
+      @invoice_print = Spree::Invoice.find_or_create_by_order_id(order_id)
       if @invoice_print
         respond_to do |format|
           format.pdf  {
