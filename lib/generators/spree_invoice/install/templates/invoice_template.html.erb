@@ -8,7 +8,7 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<%= wicked_pdf_image_tag(SpreeInvoice.invoice_seller_logo) %>
+			<%= @as_html ? image_tag(SpreeInvoice.invoice_seller_logo) : wicked_pdf_image_tag(SpreeInvoice.invoice_seller_logo) %>
 		</div>
 		<div id="content">
 			<%= SpreeInvoice.invoice_seller_details %><br />
