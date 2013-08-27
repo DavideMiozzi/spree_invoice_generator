@@ -12,7 +12,7 @@ module Spree
       end
       subject = (resend ? "[#{t(:resend).upcase}] " : "")
       subject += "#{Config[:site_name]} #{t('order_mailer.confirm_email.subject')} ##{@order.number}"
-      mail(:to => @order.email, :subject => subject)
+      mail(to: @order.email, from: from_address, subject: subject)
     end
   end
 end
